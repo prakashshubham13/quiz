@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIDS MATH QUIZ</title>
+    <link rel="icon" 
+    type="image/png" 
+    href="3.png">
+</head>
+<style>
+    body{
+        background:url(111.png);
+    
+        width: 100%;
+        height: 100%;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .box{
+        width: 50%;
+        height: 50%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        display: block;
+        background: rgb(80, 82, 79);
+        text-align: center;
+        align-items: center;
+        padding:50px;
+        opacity: 0.9;
+        border-radius: 45%;
+        box-shadow: 10px 10px 10px 10px black;
+    }
+    #n1,#n2,#result{
+        display:inline-block;
+        background-color: rgb(255, 255, 255);
+       
+        border: black;
+        padding: 10px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        margin: 20px;
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        outline: none;
+    }
+    #n1{
+        box-shadow: -10px -10px black;
+    }
+    #n2{
+        box-shadow: 10px -10px black;
+    }
+    #result{
+        box-shadow: 0px 10px black;
+    }
+    #anss{
+        background-color: rgb(255, 87, 58);
+        border: tomato;
+        margin: 20px;
+        box-shadow: 0px 5px rgb(0, 0, 0);
+        padding: 10px;
+        -webkit-border-bottom-right-radius: 40px;
+-webkit-border-bottom-left-radius: 40px;
+-moz-border-radius-bottomright: 40px;
+-moz-border-radius-bottomleft: 40px;
+border-bottom-right-radius: 40px;
+border-bottom-left-radius: 40px;
+outline: none;
+    }
+#anss:hover{
+    background-color: rgb(255, 255, 255);
+}
+    span{
+        font-size: 40px;
+    }
+
+h2{
+    text-align: center;
+    text-shadow: 2px 2px rgb(68, 66, 66);
+    transform: translateX(1);
+}
+
+
+
+@media screen and (max-width: 760px) {
+    body{
+        background:crimson;
+    }
+
+#n1,#n2,#result{
+        display:inline-block;
+        background-color: rgb(255, 255, 255);
+       
+        border: black;
+        padding: 0px;
+        width: 50px;
+        height: 50px;
+        text-align: center;
+        margin: 10px;
+        color: rgb(0, 0, 0);
+        font-size: 30px;
+        outline: none;
+    }
+
+
+}
+body
+{
+	margin: 0;
+	padding: 0;
+	min-height: 100vh;
+	font-family: 'PT Sans Narrow', sans-serif;
+}
+.open
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	pointer-events: none;
+	z-index: 10000;
+}
+.open .layer
+{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	transform-origin: top;
+	animation: open 1s ease-in-out forwards;
+}
+.open .layer:nth-child(1)
+{
+	background: #ffffff;
+	z-index: 2;
+}
+.open .layer:nth-child(2)
+{
+	background: #000000;
+	animation-delay: 1s;
+	z-index: 1;
+}
+@keyframes open
+{
+	0%
+	{
+		transform: scaleY(1);
+	}
+	100%
+	{
+		transform: scaleX(0);
+	}
+}
+
+</style>
+<body>
+    <div id="particles-js">
+    <div class="open">
+        <div class="layer"></div>
+        <div class="layer"><h1 style="font-size:80px; color: tomato; text-align: center;margin-top: 10%;">WELCOME</h1></div>
+    </div>
+    <h2>TIME FOR SOME MATH QUIZ</h2>
+    <div class="box">
+        <input type="text" disabled id="n1">
+        
+        <span>+</span>
+        <input type="text" disabled id="n2">
+        <br>
+        <span>=</span>
+    <br>
+        <input type="text" id="result">
+        <br>
+        <button type="button" onclick="check()" id="anss">CHECK RESULT</button>
+    </div>
+</div>
+    <script>
+       let v1 = Math.floor(Math.random()*10+1);
+       let v2 = Math.floor(Math.random()*10+1);
+        document.getElementById('n1').value = v1;
+        document.getElementById('n2').value = v2;
+        let ans = v1 + v2;
+
+
+
+        function check()
+{
+    let uans = document.getElementById('result').value;
+    console.log(v1);
+console.log(v2);
+console.log(ans);
+console.log(uans);
+    
+    if (ans == uans)
+    {
+        alert('right answer');
+          document.getElementById('result').value = '';
+   
+
+    }
+    else
+    {
+    alert('wrong answer try again');
+    document.getElementById('result').value = '';
+
+    }
+
+    v1 = Math.floor(Math.random()*10+1);
+    v2 = Math.floor(Math.random()*10+1);
+        document.getElementById('n1').value = v1;
+        document.getElementById('n2').value = v2;
+         ans = v1 + v2;
+
+}
+
+
+
+
+
+    </script>
+     <script type="text/javascript" src="particles.js"></script>
+     <script type="text/javascript" src="app.js"></script>
+</body>
+</html>
